@@ -22,8 +22,8 @@ const { checkCsrfError, csrfMiddleware } = require('./src/middlewares/middleware
 
 app.use(helmet());
 
-app.use(express.urlencoded({ extended: true }));
-
+app.use(express.urlencoded({ extended: true })); // posso postar formulários
+app.use(express.json()); // posso postar json
 app.use(express.static(path.resolve(__dirname, 'public')));
 
 const sessionOptions = session({
@@ -39,10 +39,12 @@ const sessionOptions = session({
 app.use(sessionOptions);
 app.use(flash())
 
-app.set('views', path.resolve(__dirname, 'src', 'views'));
-app.set('view engine', 'ejs');
+app.set('views', path.resolve(__dirname, 'src', 'views')); // arquivos que renderizamos na tela 
+app.set('view engine', 'ejs'); // engine que estamos utilizando para fazer a renderização
 
 app.use(csrf());
+
+// meus middlewares
 app.use(checkCsrfError); 
 app.use(csrfMiddleware);
 app.use(routes);
