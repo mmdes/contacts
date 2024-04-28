@@ -16,11 +16,9 @@ const path = require('path');
 const helmet = require('helmet');
 const csrf =  require('csurf');
 
-//const meuMiddleware = require('./src/middlewares/middleware.js');
-const { checkCsrfError, csrfMiddleware } = require('./src/middlewares/middleware');
+const { middlewareGlobal, checkCsrfError, csrfMiddleware} = require('./src/middlewares/middleware');
 
-
-app.use(helmet());
+app.use(helmet()); 
 
 app.use(express.urlencoded({ extended: true })); // posso postar formulários
 app.use(express.json()); // posso postar json
@@ -45,6 +43,7 @@ app.set('view engine', 'ejs'); // engine que estamos utilizando para fazer a ren
 app.use(csrf());
 
 // meus middlewares
+app.use(middlewareGlobal);
 app.use(checkCsrfError); 
 app.use(csrfMiddleware);
 app.use(routes);

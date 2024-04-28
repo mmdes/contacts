@@ -33,6 +33,7 @@
     "regenerator-runtime": "^0.14.1",
     "server.js": "^1.0.0",
     "start": "^5.1.0",
-    "style-loader": "^4.0.0"
+    "style-loader": "^4.0.0",
+    "validator": "^13.11.0"
   }
 }

@@ -1,5 +1,5 @@
-<%- include('includes/head') %>
-    <%- include('includes/nav') %>
+<%- include('includes/head'); %>
+    <%- include('includes/nav'); %>
 
         <div class="container">
             <div class="row">
@@ -7,42 +7,42 @@
                 <div class="col-lg-8 my-3">
                     <h1 class="text-center my-3"> Registration or Login </h1>
                     <p class="text-center lead"> Create an account or log in </p>
+                    <%- include('includes/messages') %>
+                        <div class="row">
+                            <div class="col">
+                                <h4>Register</h4>
+                                <p> If you haven't registered yet, you can do that here</p>
+                                <form action="/login/register" method="POST">
+                                    <input type="hidden" name="_csrf" value="<%= csrfToken  %>">
+                                    <div class="form-group">
+                                        <label>e-mail</label>
+                                        <input type="email" class="form-control" name="email">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>password</label>
+                                        <input type="password" class="form-control" name="password">
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Create</button>
+                                </form>
+                            </div>
 
-                    <div class="row">
-                        <div class="col">
-                            <h4>Register</h4>
-                            <p> If you haven't registered yet, you can do that here</p>
-                            <form action="/login/register" method="POST">
-                                <input type="hidden" name="_csrf" value="<%= csrfToken  %>">
-                                <div class="form-group">
-                                    <label>e-mail</label>
-                                    <input type="email" class="form-control" name="email">
-                                </div>
-                                <div class="form-group">
-                                    <label>password</label>
-                                    <input type="password" class="form-control" name="password">
-                                </div>
-                                <button type="submit" class="btn btn-primary">Create</button>
-                            </form>
+                            <div class="col">
+                                <h4>Sign in</h4>
+                                <p> If you already got an account, you can just log in</p>
+                                <form action="/login/login" method="POST">
+                                    <input type="hidden" name="_csrf" value="<%= csrfToken  %>">
+                                    <div class="form-group">
+                                        <label>e-mail</label>
+                                        <input type="email" class="form-control" name="email">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>password</label>
+                                        <input type="password" class="form-control" name="password">
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Enter</button>
+                                </form>
+                            </div>
                         </div>
-
-                        <div class="col">
-                            <h4>Sign in</h4>
-                            <p> If you already got an account, you can just log in</p>
-                            <form action="/login/login" method="POST">
-                                <input type="hidden" name="_csrf" value="<%= csrfToken  %>">
-                                <div class="form-group">
-                                    <label>e-mail</label>
-                                    <input type="email" class="form-control" name="email">
-                                </div>
-                                <div class="form-group">
-                                    <label>password</label>
-                                    <input type="password" class="form-control" name="password">
-                                </div>
-                                <button type="submit" class="btn btn-primary">Enter</button>
-                            </form>
-                        </div>
-                    </div>
 
                 </div>
                 <div class="col-lg-2"></div>
