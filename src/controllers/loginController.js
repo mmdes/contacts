@@ -23,7 +23,6 @@ exports.register = async function(req, res) {
       req.session.save(function() {
         return res.redirect('/login/index');
       });
-
   
     } catch(e) {
       console.log(e);
