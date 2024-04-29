@@ -8,7 +8,6 @@ exports.register = async function(req, res) {
     try {
       const login = new Login(req.body);
       await login.register();
-  
       if(login.errors.length > 0) {
 
         console.log('Entrou aqui e esse é o valor do login.errors:')
@@ -19,6 +18,12 @@ exports.register = async function(req, res) {
         });
         return;
       }
+
+      req.flash('success', 'You user has been successfully created!')
+      req.session.save(function() {
+        return res.redirect('/login/index');
+      });
+
   
     } catch(e) {
       console.log(e);
