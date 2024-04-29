@@ -1,15 +1,11 @@
-<% console.log('Cheguei no tamplate messages') %>
-<% console.log('Esse é o valor de ERRORS:') %>
-<% console.log(errors) %>
-<% if (errors.length > 0) { %>
-    <% console.log('Aqui eu estou!') %>
-    <div class="row">
-      <div class="col my-3">
-        <div class="alert alert-danger">
-          <% errors.forEach(erro => { %>
+<% if (errors.length> 0) { %>
+  <div class="row">
+    <div class="col my-3">
+      <div class="alert alert-danger">
+        <% errors.forEach(erro=> { %>
           <%= erro %><br>
-          <% }); %>
-        </div>
+            <% }); %>
       </div>
     </div>
-    <% } %>
+  </div>
+  <% } %>
