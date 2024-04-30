@@ -1,0 +1,41 @@
+<%- include('includes/head') %>
+    <%- include('includes/nav') %>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2"></div>
+                <div class="col-lg-8 my-3">
+                    <h1 class="text-center my-3"> Contacts </h1>
+                    <p class="text-center lead"> Create or edit your contacts bellow </p>
+
+                    <%- include('./includes/messages')  %>
+
+                    <form action="/contact/register" method="POST">
+                        <input type="hidden" name="_csrf" value="<%= csrfToken  %>">
+                        <div class="form-group">
+                            <label>Name</label>
+                            <input type="text" class="form-control" name="name">
+                        </div>
+                        <input type="hidden" name="_csrf" value="<%= csrfToken  %>">
+                        <div class="form-group">
+                            <label>Surname</label>
+                            <input type="text" class="form-control" name="surname">
+                        </div>
+                        <input type="hidden" name="_csrf" value="<%= csrfToken  %>">
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" class="form-control" name="email">
+                        </div>
+                        <input type="hidden" name="_csrf" value="<%= csrfToken  %>">
+                        <div class="form-group">
+                            <label>Phone number</label>
+                            <input type="text" class="form-control" name="phoneNumber">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Save</button>
+                    </form>
+                </div>
+                <div class="col-lg-2"></div>
+            </div>
+        </div>
+
+        <%- include('includes/footer') %>
