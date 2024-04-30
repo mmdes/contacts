@@ -11,22 +11,20 @@
                     <%- include('./includes/messages')  %>
 
                     <form action="/contact/register" method="POST">
+                        <% console.log('Passou pelo contact.ejs')%>
                         <input type="hidden" name="_csrf" value="<%= csrfToken  %>">
                         <div class="form-group">
                             <label>Name</label>
                             <input type="text" class="form-control" name="name">
                         </div>
-                        <input type="hidden" name="_csrf" value="<%= csrfToken  %>">
                         <div class="form-group">
                             <label>Surname</label>
                             <input type="text" class="form-control" name="surname">
                         </div>
-                        <input type="hidden" name="_csrf" value="<%= csrfToken  %>">
                         <div class="form-group">
                             <label>Email</label>
                             <input type="email" class="form-control" name="email">
                         </div>
-                        <input type="hidden" name="_csrf" value="<%= csrfToken  %>">
                         <div class="form-group">
                             <label>Phone number</label>
                             <input type="text" class="form-control" name="phoneNumber">

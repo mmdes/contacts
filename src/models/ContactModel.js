@@ -3,7 +3,7 @@ const validator = require('validator');
 const { ModuleFilenameHelpers } = require('webpack');
 
 const ContactSchema = new mongoose.Schema({
-    nome: { type: String, required: true },
+    name: { type: String, required: true },
     surname: { type: String, required: false, default: '' },
     email: { type: String, required: false, default: '' },
     phoneNumber: { type: String, required: false, default: '' },
@@ -18,6 +18,8 @@ function Contact(body) {
     this.body = body;
     this.errors = [];
     this.contact = null;
+
+    console.log('ENTROU NO MODEL!')
 
     Contact.prototype.register = async function () {
         this.validate();

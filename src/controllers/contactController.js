@@ -4,14 +4,14 @@ exports.index = function (req, res) {
     res.render('contact.ejs');
 }
 
-exports.render = async function (req, res) {
-
-
+exports.register = async function (req, res) {
     try {
+        console.log('ENTROU NO CONTACT.CONTROLLER')
+        console.log('ESSE É O REQ.BODY:', req.body )
         const contact = new Contact(req.body);
         await contact.register();
-        if (contact.errrors.length > 0) {
-            req.flash('errors', contact.errrors)
+        if (contact.errors.length > 0) {
+            req.flash('errors', contact.errors)
             req.session.save(() => {
                 res.redirect('/contact/index');
                 return;

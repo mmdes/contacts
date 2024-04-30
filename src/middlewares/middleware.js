@@ -22,6 +22,8 @@ exports.checkCsrfError = (err, req, res, next) => {
 };
 
 exports.loginRequired = (req, res, next) => {
+    console.log('PASSOU PELO MIDDLEWARE loginRequired')
+    console.log('IMPRIMINDO SESSION.USER', req.session.user)
     if(!req.session.user){
         req.flash('errors','You need to be logged in.')
         req.session.save(() => res.redirect('/'));
