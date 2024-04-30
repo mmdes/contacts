@@ -19,34 +19,44 @@ function Contact(body) {
     this.errors = [];
     this.contact = null;
 
-    Contact.prototype.register = async function () {
-        this.validate();
-        
-        if(this.errors.length > 0) return;
-        this.contact = await ContactModel.create(this.body);
-        
-    };
+};
 
-    Contact.prototype.validate = function () {
-        this.cleanUP();
-        if (this.body.email && !validator.isEmail(this.body.email)) this.errors.push('This email is not valid.');
-        if (!this.body.email && !this.body.phoneNumber) this.errors.push('You should input either an email or a phone number.');
-    };
+Contact.searchById = async function(id){
+    if(typeof id !== 'string') return;
+    const user = await ContactModel.findById(id);
+    return user;
+};
 
-    Contact.prototype.cleanUP = function () {
-        for (const key in this.body) {
-            if (typeof this.body[key] !== 'string') {
-                this.body[key] = '';
-            }
+
+Contact.prototype.register = async function () {
+    this.validate();
+
+    if (this.errors.length > 0) return;
+    this.contact = await ContactModel.create(this.body);
+
+};
+
+Contact.prototype.validate = function () {
+    this.cleanUP();
+    if (!this.body.name) this.errors.push('Name is a required field.');
+    if (this.body.email && !validator.isEmail(this.body.email)) this.errors.push('This email is not valid.');
+    if (!this.body.email && !this.body.phoneNumber) this.errors.push('You should input either an email or a phone number.');
+};
+
+Contact.prototype.cleanUP = function () {
+    for (const key in this.body) {
+        if (typeof this.body[key] !== 'string') {
+            this.body[key] = '';
         }
-        this.body = {
-            name: this.body.name,
-            surname: this.body.surname,
-            email: this.body.email,
-            phoneNumber: this.body.phoneNumber,
-        }
-    };
-}
+    }
+    this.body = {
+        name: this.body.name,
+        surname: this.body.surname,
+        email: this.body.email,
+        phoneNumber: this.body.phoneNumber,
+    }
+};
+
 
 
 module.exports = Contact;
