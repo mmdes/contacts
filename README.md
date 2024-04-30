@@ -22,7 +22,7 @@ This project is a web application built with JavaScript, utilizing the following
 
 3. **Working with Sessions**:
    - User authentication is implemented using sessions.
-   - Libraries like `express-session` manage user sessions.
+   - It was used express-session to manage user sessions.
 
 4. **Express Routes**:
    - We define routes for different parts of the application (e.g., authentication, user profile, posts, etc.).
