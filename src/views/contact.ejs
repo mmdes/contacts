@@ -7,10 +7,15 @@
                 <div class="col-lg-8 my-3">
                     <h1 class="text-center my-3"> Contacts </h1>
                     <p class="text-center lead"> Create or edit your contacts bellow </p>
-
+                    
                     <%- include('./includes/messages')  %>
 
-                    <form action="/contact/register" method="POST">
+                    <% if(contact._id) { %>
+                        <form action="/contact/edit/<%= contact._id %>" method="POST">
+                        <% console.log('post na rota /contact/edit', contact._id)%>     
+                        <% } else { %>
+                        <form action="/contact/register" method="POST">
+                        <% } %>
                         <input type="hidden" name="_csrf" value="<%= csrfToken  %>">
                         <div class="form-group">
                             <label>Name</label>
