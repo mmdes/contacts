@@ -16,7 +16,7 @@ const ContactModel = mongoose.model('Contact', ContactSchema);
 // utilizando funções construtoras desta vez 
 function Contact(body) {
     this.body = body;
-    this.errrors = [];
+    this.errors = [];
     this.contact = null;
 
     Contact.prototype.register = async function () {
