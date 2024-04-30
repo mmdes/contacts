@@ -6,8 +6,6 @@ exports.index = function (req, res) {
 
 exports.register = async function (req, res) {
     try {
-        console.log('ENTROU NO CONTACT.CONTROLLER')
-        console.log('ESSE É O REQ.BODY:', req.body )
         const contact = new Contact(req.body);
         await contact.register();
         if (contact.errors.length > 0) {

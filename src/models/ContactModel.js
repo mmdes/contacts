@@ -19,8 +19,6 @@ function Contact(body) {
     this.errors = [];
     this.contact = null;
 
-    console.log('ENTROU NO MODEL!')
-
     Contact.prototype.register = async function () {
         this.validate();
         
