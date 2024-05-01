@@ -45,7 +45,7 @@ exports.edit = async function (req, res) {
 
         if (contact.errors.length > 0) {
             req.flash('errors', contact.errors);
-            req.session.save(() => res.redirect('/contact/index/'));
+            req.session.save(() => res.redirect(`/contact/index/${contact.contact._id}`));
             return;
         }
 
