@@ -48,8 +48,6 @@ This project is a web application built with JavaScript, utilizing the following
    - We create objects and instances using constructor functions.
    - Prototypes are used to add methods and properties to objects.
   
-Certainly! Here's an improved version of the instructions for running an application. You can include this in your GitHub README:
-
 ---
 
 ## How to Run this Application
