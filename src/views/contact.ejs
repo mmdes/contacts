@@ -11,8 +11,7 @@
                     <%- include('./includes/messages')  %>
 
                     <% if(contact._id) { %>
-                        <form action="/contact/edit/<%= contact._id %>" method="POST">
-                        <% console.log('post na rota /contact/edit', contact._id)%>     
+                        <form action="/contact/edit/<%= contact._id %>" method="POST">  
                         <% } else { %>
                         <form action="/contact/register" method="POST">
                         <% } %>

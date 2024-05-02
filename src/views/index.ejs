@@ -6,21 +6,38 @@
                 <div class="col-lg-2"></div>
                 <div class="col-lg-8 my-3">
                     <h1 class="text-center my-3"> Contacts </h1>
+                    <% if(contacts.length> 0) { %>
                     <p class="text-center lead"> Your contacts are just bellow </p>
-
-                    <%- include('./includes/messages')  %>
-
-                    <div class="responsive-table">
-                        <table class="table my-3">
-                            <tr>
-                                <td>Luiz</td>
-                                <td>Otávio</td>
-                                <td>659999999</td>
-                                <td>otavio@email.com</td>
-                            </tr>
-                        </table>
-                    </div>
-
+                    <%}%>
+                    <%- include('./includes/messages') %>
+                        <% if(contacts.length> 0) { %>
+                            <div class="responsive-table">
+                                <table class="table my-3">
+                                    <% contacts.forEach(contact=> { %>
+                                        <tr>
+                                            <td>
+                                                <%= contact.name %>
+                                            </td>
+                                            <td>
+                                                <%= contact.surname %>
+                                            </td>
+                                            <td>
+                                                <%= contact.phoneNumber %>
+                                            </td>
+                                            <td>
+                                                <%= contact.email %>
+                                            </td>
+                                            <td><a href="/contact/index/<%= contact._id %>">Edit</a></td>
+                                            <td><a class="text-danger"
+                                                    href="/contact/delete/<%= contact._id %>">Delete</a></td>
+                                        </tr>
+                                        <% }); %>
+                                </table>
+                            </div>
+                            <% } else { %>
+                                <p class="text-center lead">You don't have any contact.</p>
+                                <% } %>
+                    
                 </div>
                 <div class="col-lg-2"></div>
             </div>
