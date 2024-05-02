@@ -1,4 +1,5 @@
 # JavaScript Project with Express, MongoDB, and EJS
+---
 
 This project is a web application built with JavaScript, utilizing the following technologies and concepts:
 
@@ -47,4 +48,34 @@ This project is a web application built with JavaScript, utilizing the following
    - We create objects and instances using constructor functions.
    - Prototypes are used to add methods and properties to objects.
   
-## How do I run this application (in construction ...)
+Certainly! Here's an improved version of the instructions for running an application. You can include this in your GitHub README:
+
+---
+
+## How to Run this Application
+Follow these steps to run the application in development mode:
+1. **Install Dependencies**:
+   - First, install all the necessary dependencies by running the following command:
+     ```bash
+     npm install
+     ```
+2. **MongoDB and Session Setup**:
+   - Create a connection with MongoDB:
+     - Set up your MongoDB connection string in a `.env` file. Your `.env` file should look like this:
+       ```
+       CONNECTIONSTRING=<YOUR_MONGO_DB_CONNECTION_STRING>
+       SESSIONSECRET=<YOUR_CHOSEN_SESSION_SECRET>
+       ```
+     - Replace `<YOUR_MONGO_DB_CONNECTION_STRING>` with your actual MongoDB connection string.
+     - Choose a secure value for `<YOUR_CHOSEN_SESSION_SECRET>` to use as your session secret.
+
+3. **Run the Application**:
+   - After setting up the environment variables, run the following commands:
+     ```bash
+     npm run dev
+     npm run start
+     ```
+   - The application will start in development mode, and you can access it via your browser.
+---
+## Interface and Usability
+<img src="https://github.com/mmdes/contacts/assets/57081161/eb758582-ee68-46df-beba-ade1a3df815b"></img>
