@@ -23,7 +23,4 @@ route.post('/contact/edit/:id', loginRequired, contactController.edit)
 route.get('/contact/delete/:id', loginRequired, contactController.delete)
 
 
-
-
-
 module.exports = route;
