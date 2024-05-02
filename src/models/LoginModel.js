@@ -60,7 +60,7 @@ validate() {
 
     //password must be between 3 to 50 characters
     if (this.body.password.length < 3 || this.body.password.length > 50) {
-        this.errors.push('Your password there must be from 3 to 50 characters.')
+        this.errors.push('Your password there must be between 3 and 50 characters.')
     }
 }
 
