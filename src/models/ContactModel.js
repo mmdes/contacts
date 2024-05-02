@@ -73,8 +73,6 @@ Contact.searchContacts = async function () {
 
 Contact.delete = async function (id) {
 
-    console.log('cheguei no delete do model')
-
     if (typeof id !== 'string') return;
     const contact = await ContactModel.findOneAndDelete({ _id: id });
     return contact;
