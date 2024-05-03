@@ -30,7 +30,7 @@ This project is a web application built with JavaScript, utilizing the following
    - Middleware functions handle authentication, data validation, etc.
 
 5. **Flash Messages**:
-   - Feedback messages are displayed to users (e.g., successful login, error creating a post, etc.).
+   - Feedback messages are displayed to users.
 
 6. **Object-Oriented Programming with JavaScript Classes**:
    - Our code is organized into classes for better maintenance and reusability.
