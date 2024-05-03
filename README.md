@@ -15,7 +15,7 @@ This project is a web application built with JavaScript, utilizing the following
 
 1. **Data Storage in MongoDB**:
    - We use MongoDB to persist application data.
-   - We create models (schemas) to represent system entities (e.g., users, posts, etc.).
+   - We create models (schemas) to represent system entities.
    - CRUD operations are implemented to interact with the database.
 
 2. **Password Hashing in the Database**:
@@ -26,7 +26,7 @@ This project is a web application built with JavaScript, utilizing the following
    - It was used express-session to manage user sessions.
 
 4. **Express Routes**:
-   - We define routes for different parts of the application (e.g., authentication, user profile, posts, etc.).
+   - We define routes for different parts of the application.
    - Middleware functions handle authentication, data validation, etc.
 
 5. **Flash Messages**:
@@ -57,7 +57,7 @@ Follow these steps to run the application in development mode:
      ```bash
      npm install
      ```
-2. **MongoDB and Session Setup**:
+2. **MongoDB and Session Setups**:
    - Create a connection with MongoDB:
      - Set up your MongoDB connection string in a `.env` file. Your `.env` file should look like this:
        ```
